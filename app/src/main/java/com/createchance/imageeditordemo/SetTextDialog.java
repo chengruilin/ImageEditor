@@ -3,13 +3,14 @@ package com.createchance.imageeditordemo;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
 
 /**
  * Dialog to set text.

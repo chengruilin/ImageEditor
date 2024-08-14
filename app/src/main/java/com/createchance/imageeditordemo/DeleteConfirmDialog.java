@@ -2,8 +2,9 @@ package com.createchance.imageeditordemo;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 /**
  * Delete confirm dialog.

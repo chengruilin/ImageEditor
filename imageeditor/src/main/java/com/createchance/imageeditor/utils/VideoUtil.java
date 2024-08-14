@@ -3,6 +3,7 @@ package com.createchance.imageeditor.utils;
 import android.media.MediaMetadataRetriever;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Video util
@@ -11,7 +12,7 @@ import java.io.File;
  * @date 2018-04-15
  */
 public class VideoUtil {
-    public static int getVideoRotation(File video) {
+    public static int getVideoRotation(File video) throws IOException {
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         retriever.setDataSource(video.getAbsolutePath());
         int rotation = Integer.valueOf(
@@ -20,7 +21,7 @@ public class VideoUtil {
         return rotation;
     }
 
-    public static long getVideoDuration(File video) {
+    public static long getVideoDuration(File video) throws IOException {
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         retriever.setDataSource(video.getAbsolutePath());
         long duration = Long.valueOf(

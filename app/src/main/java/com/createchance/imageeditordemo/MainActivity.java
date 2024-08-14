@@ -11,19 +11,20 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.createchance.imageeditor.utils.Logger;
 import com.createchance.imageeditor.utils.UiThreadUtil;
@@ -232,7 +233,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 retriever.setDataSource(work.getAbsolutePath());
                 workItem.mWidth = Integer.valueOf(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH));
                 workItem.mHeight = Integer.valueOf(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT));
-                retriever.release();
+                try {
+                    retriever.release();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             } else {
                 BitmapFactory.decodeFile(work.getAbsolutePath(), options);
                 workItem.mWidth = options.outWidth;

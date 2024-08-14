@@ -1,0 +1,2 @@
+/Users/inshot/Documents/github-code/ImageEditor/imageeditor/jni/freetype/CMakeLists.txt
+/Users/inshot/Documents/github-code/ImageEditor/imageeditor/jni/freetype/builds/cmake/FindHarfBuzz.cmake

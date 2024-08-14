@@ -4,11 +4,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import java.io.IOException;
 import java.util.Locale;

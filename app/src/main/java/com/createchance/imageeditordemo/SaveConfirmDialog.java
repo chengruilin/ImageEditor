@@ -3,11 +3,12 @@ package com.createchance.imageeditordemo;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.createchance.imageeditor.IEManager;
 
